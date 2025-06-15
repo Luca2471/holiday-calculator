@@ -1,0 +1,74 @@
+.holidayCalculatorTable {
+    background: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15;
+    color: #222;
+    padding: 8px;
+    border: 0px;
+    width: 100%;
+};
+
+.deleteButton {
+    background: transparent;
+    color: #e53935;
+    border: none;
+    border-radius: 4;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15;
+    transition: background 0.2s;
+    outline: none;
+};
+
+.tableHeader {
+    text-align: left;
+    font-weight: 600;
+};
+
+@media (max-width: 1280px) {
+    .holidayCalculatorTable,
+    .holidayCalculatorTable thead,
+    .holidayCalculatorTable tbody,
+    .holidayCalculatorTable th,
+    .holidayCalculatorTable td,
+    .holidayCalculatorTable tr {
+        font-size: 13px;
+        display: block;
+        width: 100%;
+    };
+
+    .holidayCalculatorTable thead {
+        display: none;
+    };
+
+    .holidayCalculatorTable tr {
+        margin-bottom: 18px;
+        border-bottom: 2px solid #f1f5fb;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    };
+
+    .holidayCalculatorTable td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        min-height: 36px;
+        text-align: left;
+        font-size: 15px;
+        background: #fff;
+    };
+
+    .holidayCalculatorTable td:before {
+        position: absolute;
+        top: 0;
+        left: 8px;
+        width: 48%;
+        white-space: nowrap;
+        font-weight: 600;
+        color: #1976d2;
+        font-size: 13px;
+        content: attr(data-label);
+    };
+};

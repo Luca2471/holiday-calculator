@@ -1,0 +1,45 @@
+.tableCellInput {
+    background: #f9f9f9;
+    border: 1px solid #bbb;
+    border-radius: 4;
+    padding: 6px 10px;
+    margin-right: 8;
+    font-size: 16;
+    color: #222;
+};
+
+.submitButton {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16;
+    letter-spacing: 0.5;
+};
+
+.holidayCalculatorForm {
+    margin-bottom: 24px;
+};
+
+@media (max-width: 1280px) {
+    .holidayCalculatorForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    };
+
+    .holidayCalculatorForm label {
+        margin-right: 0;
+    };
+
+    .holidayCalculatorForm input,
+    .holidayCalculatorForm button {
+        width: 100%;
+        margin-right: 0;
+        font-size: 15px;
+        padding: 6px 8px;
+    };
+};
