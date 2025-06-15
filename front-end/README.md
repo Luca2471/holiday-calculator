@@ -4,11 +4,11 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 Requirements (I didn't have time to check compatibility with other versions but the ones I am running are): 
 ```bash
-Node: 22.16.0;
+Node: v22.16.0
 #
-npm: 10.9.2;
+npm: v10.9.2
 #
-TypeScript: 5.8.3;
+TypeScript: v5.8.3
 ```
 
 
