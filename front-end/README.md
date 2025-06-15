@@ -2,6 +2,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Requirements (I didn't have time to check compatibility with other versions but the ones I am running are): 
+Node: 22.16.0;
+npm: 10.9.2;
+TypeScript: 5.8.3;
+
+To install all dependencies run 
+```bash
+npm install
+```
+
 First, run the development server:
 
 ```bash
