@@ -1,17 +1,29 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './holidayCalculatorContainer.module.scss';
 import { useFlightGraph, useParseTrips } from './hooks';
 import FlightsList from './flightsList/flightsList';
 import { FLIGHTS_RAW, RAW_TRIPS, MAX_TRIPS, tableHeaders } from './constants';
 import { getTripSuggestion } from './helpers';
 import HolidayCalculatorForm from './holidayCalculatorForm/holidayCalculatorForm';
+import { getAllTrips} from '@/utils';
 
 
 const HolidayCalculatorContainer = () => {
+	const [flightData, setFlightData] = useState(RAW_TRIPS) 
+
+	useEffect(() => {
+		fetch("http://localhost:8080/trips")
+  	.then(async res => res.json())
+  	.then(data => {
+			data.lenght ?? setFlightData(data)
+		})
+  	.catch((err) => console.error(err))
+	}, []);
+
 	const graph = useFlightGraph(FLIGHTS_RAW);
-	const Trips = useParseTrips(RAW_TRIPS);
+	const Trips = useParseTrips(flightData);
 
 	const [trips, setTrips] = useState(Trips);
 	const [form, setForm] = useState({ passengers: "", home: "", dest: "", name: "" });
