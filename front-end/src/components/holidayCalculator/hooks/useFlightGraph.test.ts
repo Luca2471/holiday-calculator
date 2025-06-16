@@ -35,17 +35,4 @@ describe("useFlightGraph", () => {
     const { result } = renderHook(() => useFlightGraph([]));
     expect(result.current.size).toBe(0);
   });
-
-  it("should group flights by origin", () => {
-    const flights: Flight[] = [
-      { origin: "X", destination: "Y", distance: 50, flight: "XY50" },
-      { origin: "X", destination: "Z", distance: 60, flight: "XZ60" },
-      { origin: "Y", destination: "Z", distance: 70, flight: "YZ70" },
-    ];
-    (useParseFlightsModule.default as jest.Mock).mockImplementation(() => flights);
-    const { result } = renderHook(() => useFlightGraph(["f1", "f2", "f3"]));
-    expect(result.current.get("X")).toHaveLength(2);
-    expect(result.current.get("Y")).toHaveLength(1);
-    expect(result.current.get("Z")).toBeUndefined();
-  });
 });

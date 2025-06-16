@@ -15,10 +15,18 @@ const HolidayCalculatorContainer = () => {
 		fetch("http://localhost:8080/trips")
   	.then(async res => res.json())
   	.then(data => {
-			data.lenght ?? setFlightData(data)
+			data.lenght ? setFlightData(data) : setFlightData(RAW_TRIPS);
 		})
   	.catch((err) => console.error(err))
 	}, []);
+
+	const testF = async () => {
+		await fetch("http://localhost:8080/trips")
+		  	.then(async res => res.json())
+  	.then(data => {
+			data.lenght ? setFlightData(data) : setFlightData(RAW_TRIPS);
+		})
+	}
 
 	const graph = useFlightGraph(FLIGHTS_RAW);
 	const Trips = useParseTrips(flightData);

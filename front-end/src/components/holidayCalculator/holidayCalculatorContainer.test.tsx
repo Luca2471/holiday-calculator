@@ -30,6 +30,12 @@ jest.mock('./helpers', () => ({
 	getTripSuggestion: jest.fn(() => ({})),
 }));
 
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve({}),
+  })
+);
+
 jest.mock('./holidayCalculatorForm/holidayCalculatorForm', () => (props: any) => (
 	<form data-testid="holiday-form" onSubmit={props.handleSubmit}>
 		<input
