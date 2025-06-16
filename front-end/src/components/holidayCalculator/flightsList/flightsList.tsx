@@ -19,7 +19,7 @@ const FlightsList = ({tableHeaders, suggestions, onClickEvent}: FlightsListFProp
           <thead>
             <tr style={{ background: "#f1f5fb" }}>
               {tableHeaders.map((header, idx) => (
-                <th key={idx} className={styles.tableHeader}>{header}</th>
+                <th key={idx} style={ idx === 0 ? {padding: "0 12px"} : {padding: "0"} } className={styles.tableHeader}>{header}</th>
               ))}
             </tr>
           </thead>
@@ -31,7 +31,7 @@ const FlightsList = ({tableHeaders, suggestions, onClickEvent}: FlightsListFProp
                   background: index % 2 === 0 ? "#fafbfc" : "#fff"
                 }}
               >
-                <td data-label={tableHeaders[0]}>{suggestion.name}</td>
+                <td data-label={tableHeaders[0]} style={{ padding: "0 12px" }}>{suggestion.name}</td>
                 <td data-label={tableHeaders[1]}>{suggestion.vehicle}</td>
                 <td data-label={tableHeaders[2]}>£{suggestion.vehicleCost}</td>
                 <td data-label={tableHeaders[3]}>{suggestion.outboundRoute}</td>
