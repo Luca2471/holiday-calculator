@@ -7,8 +7,6 @@ import FlightsList from './flightsList/flightsList';
 import { FLIGHTS_RAW, RAW_TRIPS, MAX_TRIPS, tableHeaders } from './constants';
 import { getTripSuggestion } from './helpers';
 import HolidayCalculatorForm from './holidayCalculatorForm/holidayCalculatorForm';
-import { getAllTrips} from '@/utils';
-
 
 const HolidayCalculatorContainer = () => {
 	const [flightData, setFlightData] = useState(RAW_TRIPS) 

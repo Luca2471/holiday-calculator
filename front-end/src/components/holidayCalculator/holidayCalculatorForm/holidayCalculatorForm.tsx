@@ -20,8 +20,8 @@ const HolidayCalculatorForm = ({ trips, passengers, home, dest, name, handleSubm
 				onSubmit={handleSubmit}
 				className={styles.holidayCalculatorForm}
 			>
-				<label style={{ marginRight: 16 }}>
-					<span style={{ fontWeight: 500 }}>Passengers:</span>{" "}
+				<label style={{ marginRight: 16,  }}>
+					<span style={{ fontWeight: 500, padding: "0px 12px" }}>Passengers:</span>{" "}
 					<input
 						name="passengers"
 						type="number"
